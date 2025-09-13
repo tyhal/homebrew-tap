@@ -1,16 +1,9 @@
-# Tyhal Crie
+# tyhal's homebrew tap
 
-## How do I install these formulae?
+## How do I install?
 
-`brew install tyhal/crie/<formula>`
-
-Or `brew tap tyhal/crie` and then `brew install <formula>`.
-
-Or, in a `brew bundle` `Brewfile`:
-
-```ruby
-tap "tyhal/crie"
-brew "<formula>"
+```
+brew install --cask tyhal/tap/crie
 ```
 
 ## Documentation
