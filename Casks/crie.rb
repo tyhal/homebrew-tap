@@ -17,14 +17,14 @@ cask "crie" do
   on_macos do
     on_arm do
       url "https://github.com/tyhal/crie/releases/download/v#{version}/crie_#{version}_darwin_arm64.tar.gz"
-      sha256 "0a137ab8af859d2ab0977c42a636731d8a0900c772ac1a6e49e4d941c687e6e7"
+      sha256 "f408122f3959f0d6d17f5fc0f167d447b8591adc2526d6184d49cc1b674c8b65"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/tyhal/crie/releases/download/v#{version}/crie_#{version}_linux_amd64.tar.gz"
-      sha256 "73db0268b09b67b62ec5d2f4593ef5710e504f4b8f5d763e0e942ee4eed4e947"
+      sha256 "a70f2368ba7b3c4ea023596dc0d553c45d5ab1a5c39a8d6d68cbc374a266137d"
     end
   end
 
