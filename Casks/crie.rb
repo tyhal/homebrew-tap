@@ -14,10 +14,17 @@ cask "crie" do
   zsh_completion "res/completion/crie.zsh"
   fish_completion "res/completion/crie.fish"
 
+  on_macos do
+    on_arm do
+      url "https://github.com/tyhal/crie/releases/download/v#{version}/crie_#{version}_darwin_arm64.tar.gz"
+      sha256 "3bbfd464dfecb09a88905c7b3005d900318276199e49b6e786324d093463adcd"
+    end
+  end
+
   on_linux do
     on_intel do
       url "https://github.com/tyhal/crie/releases/download/v#{version}/crie_#{version}_linux_amd64.tar.gz"
-      sha256 "e8fa77dabdd5e1df368cc07cfb630c5bb4f770a090942f1a88d031b72c6aabd0"
+      sha256 "26539d802e1f09b5d985c41f15815389c590531299e27f3c8692f6d0c6866fb9"
     end
   end
 
