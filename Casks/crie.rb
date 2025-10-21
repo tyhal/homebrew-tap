@@ -3,7 +3,7 @@ cask "crie" do
   name "crie"
   desc "Universal meta-linter using containerized execution "
   homepage "https://github.com/tyhal/crie"
-  version "0.20.11"
+  version "0.20.12"
 
   livecheck do
     skip "Auto-generated on release."
@@ -17,14 +17,14 @@ cask "crie" do
   on_macos do
     on_arm do
       url "https://github.com/tyhal/crie/releases/download/v#{version}/crie_#{version}_darwin_arm64.tar.gz"
-      sha256 "1ef57a4c1633dd607b9453700612918c27598bce45233f6491d11c114006d6c5"
+      sha256 "a15c864e7504d384532ab72c4956ce3596f44b8396ba19499c8d150649453327"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/tyhal/crie/releases/download/v#{version}/crie_#{version}_linux_amd64.tar.gz"
-      sha256 "c375bf6b05d478f9806d088dabd25a8570c7b5c723fc0048e39768033bd00a06"
+      sha256 "8530cf30a89979783495c4a9c1d80798d18b57d749c90998bfadef2000f750cd"
     end
   end
 
