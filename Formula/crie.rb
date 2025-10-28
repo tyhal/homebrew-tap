@@ -12,12 +12,10 @@ class Crie < Formula
   depends_on "libassuan" => :build
   depends_on "libgpg-error" => :build
   depends_on "pkg-config" => :build
-  depends_on "gpgme"
+  depends_on "btrfs-progs" => :build unless OS.mac?
+  depends_on "llvm" => :build unless OS.mac?
 
-  on_linux do
-    depends_on "btrfs-progs" => :build
-    depends_on "llvm" => :build
-  end
+  depends_on "gpgme"
 
   def install
     if OS.linux?
@@ -29,6 +27,10 @@ class Crie < Formula
       ENV.prepend_path "PKG_CONFIG_PATH", Formula["gpgme"].opt_lib/"pkgconfig"
       ENV.prepend_path "PKG_CONFIG_PATH", Formula["libgpg-error"].opt_lib/"pkgconfig"
       ENV.prepend_path "PKG_CONFIG_PATH", Formula["libassuan"].opt_lib/"pkgconfig"
+
+      # Point to btrfs-progs headers
+      ENV.prepend_path "C_INCLUDE_PATH", Formula["btrfs-progs"].opt_include
+      ENV.prepend_path "LIBRARY_PATH", Formula["btrfs-progs"].opt_lib
     end
     ldflags = %W[
       -s -w
