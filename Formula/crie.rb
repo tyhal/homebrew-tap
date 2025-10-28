@@ -16,6 +16,7 @@ class Crie < Formula
 
   on_linux do
     depends_on "llvm" => :build
+    depends_on "libbtrfs-dev" => :build
   end
 
   def install
