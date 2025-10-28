@@ -17,7 +17,7 @@ jobs:
         if: github.event_name == 'pull_request'
         run: git fetch origin ${{ github.base_ref }}:refs/remotes/origin/${{ github.base_ref }}
       - name: Run crie all
-        uses: tyhal/crie-action@9df61070f1fde6f13ba17b5b86eb92b8155f1783 # main
+        uses: tyhal/crie-action@dc2ddc3294821a43818a025525aebc08c8fc1179 # main
         with:
           command: lnt
           lint_continue: 'true'
