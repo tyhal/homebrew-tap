@@ -9,10 +9,10 @@ class Crie < Formula
 
   depends_on "gnupg" => :build
   depends_on "go" => :build
-  depends_on "gpgme" => :build
   depends_on "libassuan" => :build
   depends_on "libgpg-error" => :build
   depends_on "pkg-config" => :build
+  depends_on "gpgme"
 
   on_linux do
     depends_on "llvm" => :build
