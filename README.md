@@ -3,7 +3,7 @@
 ## How do I install?
 
 ```
-brew install --cask tyhal/tap/crie
+brew install tyhal/tap/crie
 ```
 
 ## Documentation
