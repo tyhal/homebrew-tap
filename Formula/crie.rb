@@ -15,8 +15,8 @@ class Crie < Formula
   depends_on "gpgme"
 
   on_linux do
-    depends_on "llvm" => :build
     depends_on "btrfs-progs" => :build
+    depends_on "llvm" => :build
   end
 
   def install
