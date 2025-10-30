@@ -1,8 +1,8 @@
 class Crie < Formula
   desc "Universal meta-linter using containerized execution"
   homepage "https://github.com/tyhal/crie"
-  url "https://github.com/tyhal/crie/archive/refs/tags/v1.0.2.tar.gz"
-  sha256 "63a93ca6b52c994c2c374a5e9b34a3bec3fe3edb93c16783c76ba63a81c56136"
+  url "https://github.com/tyhal/crie/archive/refs/tags/v1.0.3.tar.gz"
+  sha256 "de8234cfcb7172f1459811f0703d6b1be72a72348d0ab828bad5177dedc23e10"
   license "MIT"
 
   head "https://github.com/tyhal/crie.git", branch: "main"
