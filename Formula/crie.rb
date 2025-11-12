@@ -8,7 +8,7 @@ class Crie < Formula
   head "https://github.com/tyhal/crie.git", branch: "main"
 
   bottle do
-    root_url https://ghcr.io/v2/tyhal/homebrew-tap
+    root_url "https://ghcr.io/v2/tyhal/homebrew-tap"
     sha256 cellar: :any,                 arm64_sequoia: "aa5dbb8040945f2e89147b053fd7448977390e059d2d9d4a39ce7a8878ff7c6a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b83678f153a77c63e8e02be02b51e27cbcfafd729fa6739ccb5134b8d70d146b"
   end
