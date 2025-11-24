@@ -8,9 +8,9 @@ class Crie < Formula
   head "https://github.com/tyhal/crie.git", branch: "main"
 
   bottle do
-    root_url "https://ghcr.io/v2/tyhal/homebrew-tap"
-    sha256 cellar: :any,                 arm64_sequoia: "84a1a20d81f005c85f8a7b0d1b78ca45a51c7976c7f18fd9563a82c6574bb4fb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6ad8a669b97bbe691bbcca6e7d01c47f1958d71eac97e970b4068ab6d85599bd"
+    root_url "https://github.com/tyhal/homebrew-tap/releases/download/crie-1.0.5"
+    sha256 cellar: :any,                 arm64_sequoia: "66738e685b997062020d101b8c80f7ad87468bcf480f94af60bad566e7fc7906"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5e081671fbdf8ae5d958cc2916e91703d72b8f5a724195d2e403087fdb53ee6d"
   end
 
   depends_on "gnupg" => :build
