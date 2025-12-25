@@ -19,12 +19,13 @@ class Crie < Formula
 
 
   if OS.linux?
+    depends_on "libgpg-error"
+    depends_on "libassuan"
+
     depends_on "llvm" => :build
     depends_on "btrfs-progs" => :build
   end
 
-  depends_on "libgpg-error"
-  depends_on "libassuan"
   depends_on "gpgme"
 
   def install
