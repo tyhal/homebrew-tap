@@ -1,8 +1,6 @@
 class Gotraceui < Formula
   desc "Efficient frontend for Go execution traces"
   homepage "https://gotraceui.dev"
-  url "https://github.com/dominikh/gotraceui/archive/refs/tags/v0.4.0.tar.gz"
-  sha256 "5aa6bc3e36fcde4cf91e8056df99ac432175c72ed76a061406469d8eca78f647"
   license "MIT"
 
   head "https://github.com/dominikh/gotraceui.git", branch: "master"
