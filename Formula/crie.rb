@@ -13,35 +13,16 @@ class Crie < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5e081671fbdf8ae5d958cc2916e91703d72b8f5a724195d2e403087fdb53ee6d"
   end
 
-  depends_on "gnupg" => :build
   depends_on "go" => :build
-  depends_on "libassuan" => :build
-  depends_on "libgpg-error" => :build
-  depends_on "pkg-config" => :build
-  depends_on "btrfs-progs" => :build unless OS.mac?
-  depends_on "llvm" => :build unless OS.mac?
-
-  depends_on "gpgme"
 
   def install
-    if OS.linux?
-      ENV["CC"] = Formula["llvm"].opt_bin/"clang"
-      ENV["CXX"] = Formula["llvm"].opt_bin/"clang++"
-      ENV.prepend_path "PATH", Formula["llvm"].opt_bin
-
-      # Make sure pkg-config finds gpgme and its dependencies
-      ENV.prepend_path "PKG_CONFIG_PATH", Formula["gpgme"].opt_lib/"pkgconfig"
-      ENV.prepend_path "PKG_CONFIG_PATH", Formula["libgpg-error"].opt_lib/"pkgconfig"
-      ENV.prepend_path "PKG_CONFIG_PATH", Formula["libassuan"].opt_lib/"pkgconfig"
-
-      # Point to btrfs-progs headers
-      ENV.prepend_path "C_INCLUDE_PATH", Formula["btrfs-progs"].opt_include
-      ENV.prepend_path "LIBRARY_PATH", Formula["btrfs-progs"].opt_lib
-    end
     ldflags = %W[
       -s -w
       -X main.version=#{version}
     ]
+
+    ENV["CGO_ENABLED"] = "0"
+    ENV["GOFLAGS"] = "-tags=exclude_graphdriver_btrfs,containers_image_openpgp"
 
     system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/crie"
 

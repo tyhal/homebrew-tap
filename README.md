@@ -1,11 +1,9 @@
 # tyhal's homebrew tap
 
-## How do I install?
+## Install
+
+- **crie** - Universal meta-linter using containerized execution ( Tyler Hale )
 
 ```
 brew install tyhal/tap/crie
 ```
-
-## Documentation
-
-`brew help`, `man brew` or check [Homebrew's documentation](https://docs.brew.sh).
