@@ -1,8 +1,8 @@
 class Klar < Formula
   desc "Structured json → clear output"
   homepage "https://github.com/tyhal/klar"
-  url "https://github.com/tyhal/klar/archive/refs/tags/v0.0.0.tar.gz"
-  sha256 "3ec9ad811d658ca0be6370ad68fea1c812415c2b3d63adc66c67208093dcccd1"
+  url "https://github.com/tyhal/klar/archive/refs/tags/v0.0.1.tar.gz"
+  sha256 "4f4c879803e5679be9ec5809c95434927a8ea03dcf80ac422f030ccfa75f5464"
   license "MIT"
 
   head "https://github.com/tyhal/klar.git", branch: "main"
