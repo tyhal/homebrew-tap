@@ -13,10 +13,9 @@ class Crie < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5e081671fbdf8ae5d958cc2916e91703d72b8f5a724195d2e403087fdb53ee6d"
   end
 
+  depends_on "gnupg" => :build
   depends_on "go" => :build
   depends_on "pkg-config" => :build
-  depends_on "gnupg" => :build
-
 
   if OS.linux?
     depends_on "libgpg-error"

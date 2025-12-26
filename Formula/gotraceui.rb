@@ -1,5 +1,5 @@
 class Gotraceui < Formula
-  desc "An efficient frontend for Go execution traces"
+  desc "Efficient frontend for Go execution traces"
   homepage "https://gotraceui.dev"
   url "https://github.com/dominikh/gotraceui/archive/refs/tags/v0.4.0.tar.gz"
   sha256 "894324f78a0f76c4e0317f995e6ae578ca9dc8fa97157946e8b6e8c45b93dc0f"
@@ -41,7 +41,7 @@ class Gotraceui < Formula
         ENV.prepend_path "C_INCLUDE_PATH", inc if inc.directory?
       end
     end
-    ldflags = %W[
+    ldflags = %w[
       -s -w
       -X gioui.org/app.ID=co.honnef.Gotraceui
     ]
@@ -49,8 +49,10 @@ class Gotraceui < Formula
     system "go", "build", *std_go_args(output: libexec/"gotraceui", ldflags: ldflags), "./cmd/gotraceui"
 
     # FIX for locales not found...
-    (bin/"gotraceui").write_env_script libexec/"gotraceui",
-                                       XCOMPOSEFILE: Formula["libx11"].opt_share/"X11/locale/en_US.UTF-8/Compose" unless OS.mac?
+    unless OS.mac?
+      (bin/"gotraceui").write_env_script libexec/"gotraceui",
+                                         XCOMPOSEFILE: Formula["libx11"].opt_share/"X11/locale/en_US.UTF-8/Compose"
+    end
 
     pkgshare.install "share"
   end
