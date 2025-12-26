@@ -7,6 +7,12 @@ class Klar < Formula
 
   head "https://github.com/tyhal/klar.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/tyhal/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:  "d70ca3418fd594f0bbbeb516f276e5fbea4fcdc05151de2db9008df560b59391"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "d3d4e539f75ec98ef331273ee6dbea0325d7c3063ec7a524711327f4ec0122c0"
+  end
+
   depends_on "go" => :build
 
   def install
