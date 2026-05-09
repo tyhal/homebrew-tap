@@ -9,8 +9,8 @@ class Klar < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/tyhal/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:  "643509be8e0931dd4c65899ce5bfb328f787a63b19cf73426082247983af1949"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "9d1199b8c9de5f95749d8059532b6a2afc7e33d2342e8c1794b2c00ec8f66630"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:  "fc7a24ef2abae0bd3276a9d27738913dfbb91e43674afb84597b412b3cbff5e4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "6d6a97c98c92af0c7dbb06a4cae64ba4faf354c52ca199a0265d35a40732812b"
   end
 
   depends_on "go" => :build
