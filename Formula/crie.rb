@@ -9,8 +9,8 @@ class Crie < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/tyhal/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:  "86bdb875a09ccce1d9d7635314f0cce827c4eff2e31f246c8e35d537b65422ca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "6281a0bb1da4defe470d27e8a4c67f7c0443cac616faf5342e45a7f93114c041"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:  "462905719cd31e4e2ad50d09cda0b8cf4760be394e8cc7a6c84b639be17b87e6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "c195b02e8553f09d5ff59200033a8fd787c2d421961a430debbf298e7889d6c5"
   end
 
   depends_on "go" => :build
