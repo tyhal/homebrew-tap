@@ -49,10 +49,9 @@ class Gotraceui < Formula
 
     system "go", "build", *std_go_args(output: libexec/"gotraceui", ldflags: ldflags), "./cmd/gotraceui"
 
-    # FIX for locales not found...
     unless OS.mac?
       (bin/"gotraceui").write_env_script libexec/"gotraceui",
-                                         XCOMPOSEFILE: Formula["libx11"].opt_share/"X11/locale/en_US.UTF-8/Compose"
+                                         XLOCALEDIR: Formula["libx11"].opt_share/"X11/locale"
     end
 
     pkgshare.install "share"
