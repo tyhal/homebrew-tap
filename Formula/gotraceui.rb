@@ -3,6 +3,10 @@ class Gotraceui < Formula
   homepage "https://gotraceui.dev"
   license "MIT"
 
+  url "https://github.com/dominikh/gotraceui/archive/bfc5b70255cae54a74929a1e2394d57d4a3bc9d8.tar.gz"
+  version "20251215"
+  sha256 "35955954b8ae323a16ef764bc70fba851cbec92f3cdff15688e1670aa564b68e"
+
   head "https://github.com/dominikh/gotraceui.git", branch: "master"
 
   depends_on "go" => :build
