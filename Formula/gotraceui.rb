@@ -12,15 +12,13 @@ class Gotraceui < Formula
   depends_on "pkg-config" => :build
 
   on_linux do
-    depends_on "llvm"
-
-    depends_on "wayland"
-    depends_on "libx11"
-    depends_on "libxkbcommon"
-    depends_on "mesa"
-
     depends_on "libxcursor" => :build
     depends_on "vulkan-headers" => :build
+    depends_on "libx11"
+    depends_on "libxkbcommon"
+    depends_on "llvm"
+    depends_on "mesa"
+    depends_on "wayland"
   end
 
   def install
