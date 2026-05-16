@@ -1,5 +1,7 @@
 # tyhal's homebrew tap
 
+I even use it on [linux](https://www.ypsidanger.com/homebrew-is-great-on-linux/)
+
 ## Install
 
 ### Mine
