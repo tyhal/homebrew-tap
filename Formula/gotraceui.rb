@@ -11,7 +11,7 @@ class Gotraceui < Formula
   depends_on "go" => :build
   depends_on "pkg-config" => :build
 
-  if OS.linux?
+  on_linux do
     depends_on "llvm"
 
     depends_on "wayland"
@@ -24,6 +24,10 @@ class Gotraceui < Formula
   end
 
   def install
+    if OS.linux? && !Hardware::CPU.is_64_bit?
+      odie "gotraceui requires a 64-bit CPU on Linux; gio's Vulkan backend uses CGO and does not support 32-bit ARM"
+    end
+
     if OS.linux?
       ENV["CC"] = Formula["llvm"].opt_bin/"clang"
       ENV["CXX"] = Formula["llvm"].opt_bin/"clang++"
