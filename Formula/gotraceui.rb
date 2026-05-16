@@ -14,7 +14,9 @@ class Gotraceui < Formula
   on_linux do
     depends_on "vulkan-headers" => :build
     depends_on "libx11"
+    depends_on "libxcb"
     depends_on "libxcursor"
+    depends_on "libxfixes"
     depends_on "libxkbcommon"
     depends_on "llvm"
     depends_on "mesa"
