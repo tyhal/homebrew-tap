@@ -54,11 +54,12 @@ class Gotraceui < Formula
       -X gioui.org/app.ID=co.honnef.Gotraceui
     ]
 
-    system "go", "build", *std_go_args(output: libexec/"gotraceui", ldflags: ldflags), "./cmd/gotraceui"
-
-    unless OS.mac?
+    if OS.linux?
+      system "go", "build", *std_go_args(output: libexec/"gotraceui", ldflags: ldflags), "./cmd/gotraceui"
       (bin/"gotraceui").write_env_script libexec/"gotraceui",
                                          XLOCALEDIR: Formula["libx11"].opt_share/"X11/locale"
+    else
+      system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/gotraceui"
     end
 
     pkgshare.install "share"
