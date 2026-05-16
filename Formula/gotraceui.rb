@@ -22,7 +22,6 @@ class Gotraceui < Formula
   end
 
   def install
-
     if OS.linux?
       ENV["CC"] = Formula["llvm"].opt_bin/"clang"
       ENV["CXX"] = Formula["llvm"].opt_bin/"clang++"
