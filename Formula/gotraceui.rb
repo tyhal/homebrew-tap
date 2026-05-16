@@ -8,6 +8,12 @@ class Gotraceui < Formula
 
   head "https://github.com/dominikh/gotraceui.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/tyhal/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe: "178bc9cfd6f2f49e1d591dca2f5d09848d0dc931c90526ba1b59237c2f3fb476"
+    sha256 cellar: :any_skip_relocation, arm64_linux: "5f6027e9ce6ba6dd6bf66a1da3e77909a340a07d89745892a919decdba4164f7"
+  end
+
   depends_on "go" => :build
   depends_on "pkg-config" => :build
 
