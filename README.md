@@ -20,7 +20,7 @@ brew install tyhal/tap/klar
 
 ### Others
 
-- **[gotraceui](https://gotraceui.dev/)** – An efficient frontend for Go execution traces ( Dominik Honnef )
+* [**gotraceui**](https://gotraceui.dev/) – An efficient frontend for Go execution traces ( Dominik Honnef )
 
 ```
 brew install tyhal/tap/gotraceui
