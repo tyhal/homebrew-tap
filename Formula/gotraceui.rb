@@ -10,9 +10,9 @@ class Gotraceui < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/tyhal/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe: "6bc9eb7f7b4cc448cafbbcf48e53cd343ccbcaf341812b69a0d8b5290e5dd8c1"
-    sha256 cellar: :any_skip_relocation, arm64_linux: "62f4fe1d8531901ba91b7abf434b43648171af7c39dcea6aed95f8fb25ab3caf"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe: "6e53b78a6fa750cb62448f67f6350dec858881b6be1bad824a592dd32fde1040"
+    sha256 cellar: :any_skip_relocation, arm64_linux: "884c6a54c526ec6745501a9102fcfa8da85621c40969c8242e6f6c110fde833f"
   end
 
   depends_on "go" => :build
