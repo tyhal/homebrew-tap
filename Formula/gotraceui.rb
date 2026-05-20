@@ -57,50 +57,12 @@ class Gotraceui < Formula
 
     if OS.linux?
       system "go", "build", *std_go_args(output: libexec/"gotraceui", ldflags: ldflags), "./cmd/gotraceui"
-      (bin/"gotraceui").write_env_script libexec/"gotraceui",
-                                         XLOCALEDIR: Formula["libx11"].opt_share/"X11/locale"
-    else
-      system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/gotraceui"
-    end
-
-    if OS.linux?
+      (bin/"gotraceui").write_env_script libexec/"gotraceui", XLOCALEDIR: Formula["libx11"].opt_share/"X11/locale"
       (share/"applications").install "share/applications/co.honnef.Gotraceui.desktop"
       (share/"icons").install "share/icons/hicolor"
       (share/"mime/packages").install "share/mime/packages/x-gotraceui.xml"
+    else
+      system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/gotraceui"
     end
-
-    if OS.mac?
-      iconset = buildpath/"gotraceui.iconset"
-      iconset.mkpath
-      cp "share/icons/hicolor/1024x1024/apps/gotraceui.png", iconset/"icon_512x512@2x.png"
-
-      app = prefix/"Applications/Gotraceui.app/Contents"
-      (app/"MacOS").install_symlink bin/"gotraceui"
-      (app/"Resources").mkpath
-      system "iconutil", "-c", "icns", "-o", app/"Resources/gotraceui.icns", iconset
-      (app/"Info.plist").write <<~XML
-        <?xml version="1.0" encoding="UTF-8"?>
-        <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-        <plist version="1.0">
-        <dict>
-          <key>CFBundleExecutable</key><string>gotraceui</string>
-          <key>CFBundleIconFile</key><string>gotraceui</string>
-          <key>CFBundleIdentifier</key><string>co.honnef.Gotraceui</string>
-          <key>CFBundleName</key><string>Gotraceui</string>
-          <key>CFBundlePackageType</key><string>APPL</string>
-          <key>CFBundleShortVersionString</key><string>#{version}</string>
-          <key>NSHighResolutionCapable</key><true/>
-        </dict>
-        </plist>
-      XML
-    end
-  end
-
-  def caveats
-    <<~EOS
-      Gotraceui.app is available at:
-        #{opt_prefix}/Applications/Gotraceui.app
-      To add it to Launchpad, drag it to /Applications.
-    EOS
   end
 end
