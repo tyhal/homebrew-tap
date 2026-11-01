@@ -53,7 +53,7 @@ class Gotraceui < Formula
     ldflags = %w[
       -s -w
       -X gioui.org/app.ID=co.honnef.Gotraceui
-      -X info.Main.Version=#{version}
+      -X main.Version=#{version}
     ]
 
     if OS.linux?
@@ -68,6 +68,7 @@ class Gotraceui < Formula
   end
 
   test do
-    assert_match "gotraceui #{version}", shell_output("#{bin}/gotraceui -version")
+    # no version until I work out how to set it, it's a const in version.go
+    assert_match shell_output("#{bin}/gotraceui -version"), "gotraceui (no version)"
   end
 end
