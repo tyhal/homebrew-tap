@@ -31,6 +31,6 @@ class Klar < Formula
   end
 
   test do
-    assert_match shell_output("#{bin}/klar --version"), "klar version #{version}"
+    assert_match "klar version #{version}", shell_output("#{bin}/klar --version")
   end
 end

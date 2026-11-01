@@ -30,6 +30,6 @@ class Crie < Formula
   end
 
   test do
-    assert_match shell_output("#{bin}/crie --version"), "crie version #{version}"
+    assert_match "crie version #{version}", shell_output("#{bin}/crie --version")
   end
 end

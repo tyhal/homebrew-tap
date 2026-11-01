@@ -69,6 +69,6 @@ class Gotraceui < Formula
 
   test do
     # no version until I work out how to set it, it's a const in version.go
-    assert_match shell_output("#{bin}/gotraceui -version"), "gotraceui (no version)"
+    assert_match "gotraceui (no version)", shell_output("#{bin}/gotraceui -version")
   end
 end
