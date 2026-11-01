@@ -53,7 +53,7 @@ class Gotraceui < Formula
     ldflags = %w[
       -s -w
       -X gioui.org/app.ID=co.honnef.Gotraceui
-      -X main.Version=#{version}
+      -X main.version=#{version}
     ]
 
     if OS.linux?
