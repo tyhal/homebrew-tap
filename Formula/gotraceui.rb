@@ -32,10 +32,10 @@ class Gotraceui < Formula
 
   def install
     if OS.linux?
-      ENV["CC"] = Formula["llvm"].opt_bin/"clang"
-      ENV["CXX"] = Formula["llvm"].opt_bin/"clang++"
+      ENV["CC"] = formula_opt_bin("llvm")/"clang"
+      ENV["CXX"] = formula_opt_bin("llvm")/"clang++"
       ENV["CGO_ENABLED"] = "1"
-      ENV.prepend_path "PATH", Formula["llvm"].opt_bin
+      ENV.prepend_path "PATH", formula_opt_bin("llvm")
 
       # Pkg Config
       Formula["gotraceui"].recursive_dependencies.each do |dep|
@@ -53,6 +53,7 @@ class Gotraceui < Formula
     ldflags = %w[
       -s -w
       -X gioui.org/app.ID=co.honnef.Gotraceui
+      -X main.Version=#{version}
     ]
 
     if OS.linux?
@@ -64,5 +65,10 @@ class Gotraceui < Formula
     else
       system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/gotraceui"
     end
+  end
+
+  test do
+    # no version until I work out how to set it, it's a const in version.go
+    assert_match "gotraceui (no version)", shell_output("#{bin}/gotraceui -version")
   end
 end
